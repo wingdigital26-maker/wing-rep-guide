@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex, nofollow">
+<style>[hidden]{display:none!important}body{margin:0}</style>
+</head><body>
+<title>Wing Rep Field Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F1F3F6;--bg-top:#C9CED8;--panel:#FFFFFF;--panel-2:#F1F3F6;--ink:#0B1020;--muted:#465065;--hair:rgba(11,16,32,.14);--edge:#737B8F;
+  --blue:#2757E6;--blue-press:#1F47C9;--blue-ink:#2757E6;--blue-soft:#E7EDFD;
+  --call-bg:#0B1020;--call-fg:#FFFFFF;--call-muted:#C6CDDC;--call-line:rgba(255,255,255,.16);--call-accent:#A9BCFF;--call-say:rgba(255,255,255,.08);--call-chip:rgba(255,255,255,.14);--call-chip-fg:#C9D6FF;
+  --sel-bg:#E7EDFD;--sel-fg:#1F47C9;--btn2-bg:#FFFFFF;--btn2-fg:#2757E6;
+  --font:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:16px;--r-in:12px;--pad:20px;--gap:16px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B1020;--bg-top:#18203A;--panel:#141B30;--panel-2:#1C2540;--ink:#EEF1F7;--muted:#B9C1D3;--hair:rgba(255,255,255,.13);--edge:#8C95AB;
+  --blue:#2757E6;--blue-press:#1F47C9;--blue-ink:#A9BCFF;--blue-soft:#1B2A58;
+  --call-bg:#E4E8F0;--call-fg:#0B1020;--call-muted:#3A4357;--call-line:rgba(11,16,32,.14);--call-accent:#1F47C9;--call-say:#FFFFFF;--call-chip:#E1E8FD;--call-chip-fg:#1F47C9;
+  --sel-bg:#22336B;--sel-fg:#DCE5FF;--btn2-bg:transparent;--btn2-fg:#C3D1FF;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1020;--bg-top:#18203A;--panel:#141B30;--panel-2:#1C2540;--ink:#EEF1F7;--muted:#B9C1D3;--hair:rgba(255,255,255,.13);--edge:#8C95AB;
+  --blue:#2757E6;--blue-press:#1F47C9;--blue-ink:#A9BCFF;--blue-soft:#1B2A58;
+  --call-bg:#E4E8F0;--call-fg:#0B1020;--call-muted:#3A4357;--call-line:rgba(11,16,32,.14);--call-accent:#1F47C9;--call-say:#FFFFFF;--call-chip:#E1E8FD;--call-chip-fg:#1F47C9;
+  --sel-bg:#22336B;--sel-fg:#DCE5FF;--btn2-bg:transparent;--btn2-fg:#C3D1FF;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg) linear-gradient(var(--bg-top),var(--bg) 520px) no-repeat;color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol{margin:0;padding:0}
+ul,ol{list-style:none}
+h1{font-size:38px;line-height:1.08;font-weight:500;letter-spacing:-.03em;text-wrap:balance}
+h2{font-size:19px;line-height:1.25;font-weight:600;letter-spacing:-.01em}
+h3{font-size:16px;line-height:1.3;font-weight:600}
+a{color:var(--blue-ink)}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--blue-ink);outline-offset:2px;border-radius:8px}
+.page{max-width:1240px;margin:0 auto;padding:28px 24px 72px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.muted{color:var(--muted)}
+.label{font-size:14px;line-height:1.4;color:var(--muted)}
+.sub{font-size:14px;line-height:1.45;color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+.stack{display:flex;flex-direction:column;gap:12px;min-width:0}
+/* header */
+.top{align-items:stretch;margin:14px 0 24px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:18px;letter-spacing:-.01em}
+.brand img{display:block}
+.brand span{font-weight:400;color:var(--muted);font-size:14px;padding-left:10px;border-left:1px solid var(--hair);letter-spacing:0}
+.lede{font-size:17px;max-width:56ch;color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border-radius:999px;font-weight:600;font-size:15px;line-height:1;text-decoration:none;background:var(--blue);color:#fff;border:1px solid transparent;white-space:nowrap}
+.btn:hover{background:var(--blue-press)}
+.btn.sec{background:var(--btn2-bg);color:var(--btn2-fg);border-color:currentColor}
+.btn.sec:hover{background:var(--blue-soft)}
+.btn:focus-visible{outline:2px solid var(--blue-ink);outline-offset:2px;border-radius:999px}
+.card.job{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:0}
+.job div{padding:14px var(--pad);border-left:1px solid var(--hair);display:flex;flex-direction:column;justify-content:center;gap:4px}
+.job div:first-child{border-left:0}
+.job b{font-size:26px;line-height:1.15;font-weight:600;letter-spacing:-.02em}
+/* one card style */
+.card{background:var(--panel);border:1px solid var(--hair);border-radius:var(--r);padding:var(--pad);min-width:0}
+.card > h2{margin-bottom:12px}
+.chead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.chead h2{margin:0}
+.pane{display:flex;flex-direction:column;gap:var(--gap);min-width:0}
+.ph{display:flex;align-items:baseline;gap:10px}
+.ph h2{font-size:22px;font-weight:500;letter-spacing:-.02em}
+.big{font-size:20px;line-height:1.38;font-weight:500;letter-spacing:-.01em}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);padding-top:14px;margin-top:14px;border-top:1px solid var(--hair)}
+.ask{font-size:19px;line-height:1.25;font-weight:600;letter-spacing:-.01em;color:var(--blue-ink)}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.tile{padding:0 16px;border-left:1px solid var(--hair);display:flex;flex-direction:column;gap:6px}
+.tile:first-child{padding-left:0;border-left:0}
+.tile:last-child{padding-right:0}
+/* one list style */
+.rows li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding:10px 0;border-top:1px solid var(--hair);align-items:start}
+.rows li:first-child{border-top:0;padding-top:0}
+.rows li:last-child{padding-bottom:0}
+.rows.two{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}
+.rows.two li:nth-child(2){border-top:0;padding-top:0}
+.rows.two li:nth-last-child(2):nth-child(odd){padding-bottom:0}
+.mk{width:28px;height:28px;border-radius:8px;background:var(--blue-soft);color:var(--blue-ink);display:grid;place-items:center;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;flex:none}
+.mk.box{background:none;border:1.5px solid var(--edge);width:20px;height:20px;margin:4px;border-radius:6px}
+.mk svg{display:block}
+.rows .txt{display:flex;flex-direction:column;gap:2px;padding-top:3px;min-width:0}
+.quote{margin-top:14px;border-radius:var(--r-in);padding:14px;font-size:16px;line-height:1.4;font-weight:500;background:var(--panel-2)}
+.pill{display:inline-flex;font-size:12px;font-weight:600;line-height:1;padding:6px 10px;border-radius:999px;background:var(--blue-soft);color:var(--blue-ink);white-space:nowrap;flex:none}
+/* call card: same radius, padding and border as every card */
+.dial{background:var(--call-bg);color:var(--call-fg);border-color:transparent}
+.dial .sub,.dial .label,.dial .time{color:var(--call-muted)}
+.dial .rows li{border-color:var(--call-line)}
+.dial .mk{background:var(--call-chip);color:var(--call-chip-fg)}
+.dial .sub{font-size:15px}
+.say{background:var(--panel-2);border-radius:var(--r-in);padding:10px 12px;font-size:16px;line-height:1.45}
+.dial .say{background:var(--call-say)}
+.fi{color:var(--blue-ink);border-bottom:1.5px dotted currentColor;font-weight:500}
+.dial .fi{color:var(--call-accent)}
+.time{font-size:14px;color:var(--muted)}
+.shead{display:flex;align-items:baseline;gap:10px;min-height:22px}
+.vg{display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);padding-top:14px;margin-top:14px;border-top:1px solid var(--call-line)}
+details{border-top:1px solid var(--hair)}
+details:first-of-type{border-top:0}
+summary{cursor:pointer;list-style:none;padding:12px 0;min-height:44px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);flex:none;margin:-4px 4px 0 0}
+details[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+details p{padding:0 0 12px}
+/* price table */
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{font-size:13px;font-weight:400;color:var(--muted);text-align:left;padding:0 12px 8px 0}
+td{padding:9px 12px 9px 0;border-top:1px solid var(--hair);vertical-align:top}
+td.c3{color:var(--muted)}
+th.pr,td.pr{text-align:right;padding-right:0;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.pr{font-weight:600}
+.seen{display:none}
+.total{display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:2px;padding-top:12px;border-top:1px solid var(--hair)}
+.total b{font-size:20px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.office{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:20px;font-size:15px}
+.office b{font-variant-numeric:tabular-nums;font-weight:600;user-select:all}
+.foot{margin-top:var(--gap)}
+.p-learn > .card:last-child{flex:1}
+/* switch (phone only, CSS only) */
+.mode{display:none}
+.seg{display:none}
+@media print{.panes .pane{display:flex !important}.seg{display:none !important}}
+@media (max-width:920px){
+  .page{padding:16px max(16px,env(safe-area-inset-right,0px)) 56px max(16px,env(safe-area-inset-left,0px))}
+  :root{--pad:16px;--gap:12px}
+  .grid2{grid-template-columns:minmax(0,1fr);gap:12px}
+  .top{margin:12px 0}
+  h1{font-size:28px}
+  .lede{font-size:16px}
+  .btn{flex:1 1 auto;padding:0 14px}
+  .job div{padding:12px var(--pad);justify-content:flex-start}
+  .job div:not(:first-child){padding-left:12px}
+  .job div:not(:last-child){padding-right:8px}
+  .job b{font-size:19px}
+  .mode{display:block;position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;pointer-events:none;margin:0}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:4px;position:sticky;top:8px;z-index:5;margin-bottom:12px}
+  .seg label{text-align:center;padding:10px;border-radius:10px;font-weight:600;cursor:pointer}
+  #m-learn:checked ~ .seg label[for=m-learn],#m-dial:checked ~ .seg label[for=m-dial]{background:var(--sel-bg);color:var(--sel-fg)}
+  #m-learn:focus-visible ~ .seg label[for=m-learn],#m-dial:focus-visible ~ .seg label[for=m-dial]{outline:2px solid var(--blue-ink);outline-offset:2px}
+  #m-learn:checked ~ .panes .p-dial,#m-dial:checked ~ .panes .p-learn{display:none}
+  .ph{display:none}
+  .split,.vg,.rows.two{grid-template-columns:minmax(0,1fr)}
+  .rows.two li:nth-child(2){border-top:1px solid var(--hair);padding-top:10px}
+  .rows.two li:nth-last-child(2):nth-child(odd){padding-bottom:10px}
+  .tiles{grid-template-columns:minmax(0,1fr)}
+  .tile,.tile:first-child,.tile:last-child{padding:10px 0;border-left:0;border-top:1px solid var(--hair)}
+  .tile:first-child{border-top:0;padding-top:0}
+  .tile:last-child{padding-bottom:0}
+  th.c3,td.c3{display:none}
+  .seen{display:block;font-size:14px;color:var(--muted)}
+}
+</style>
+<div class="page">
+<div class="brand"><img src="data:image/png;base64,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" width="26" height="27" alt="">Wing Digital<span>Rep field guide</span></div>
+<header class="top grid2">
+  <div class="stack" style="gap:14px">
+    <h1>Book the demo. Jack closes.</h1>
+    <p class="lede">You call roofers. You book a 15-minute demo. Jack shows it and makes the sale. The only price you say is $500 for the first month.</p>
+    <div class="btns"><a class="btn" href="https://wingdigital26-maker.github.io/wing-outreach/tour/product.html#/daily" target="_blank" rel="noopener">Open the CRM demo</a><a class="btn sec" href="https://wingdigitalco.com" target="_blank" rel="noopener">Wing Digital website</a></div>
+  </div>
+  <div class="card job"><div><b class="num">20</b><span class="label">calls a day</span></div><div><b class="num">15 min</b><span class="label">demo with Jack</span></div><div><b class="num">Dec 22</b><span class="label">goal: 2 to 3 roofers</span></div></div>
+</header>
+<input class="mode" type="radio" name="m" id="m-learn" aria-label="Learn it" checked><input class="mode" type="radio" name="m" id="m-dial" aria-label="Dial it">
+<div class="seg" role="radiogroup" aria-label="Learn it or Dial it"><label for="m-learn">Learn it</label><label for="m-dial">Dial it</label></div>
+<div class="panes grid2">
+<div class="pane p-learn">
+  <div class="ph"><h2>Learn it</h2><span class="label">Read once, before you dial</span></div>
+  <div class="card"><h2>The offer</h2><div class="stack"><p class="big">We build each roofer a CRM (a list of houses and customers). It beats any other CRM out there. We also build them a new website and help them show up on Google. The first month is $500.</p><p class="sub">Built for each roofer. Wing runs it. After month one, Jack sets the price. We want our first roofers set up before spring hail (March to June).</p></div>
+    <div class="split"><div class="stack" style="gap:4px"><span class="label">Who to aim for</span><p>Roofers with 2 or more crews who work storms. Dallas-Fort Worth, Oklahoma City and Norman.</p></div><div class="stack" style="gap:4px"><span class="label">Ask early</span><p class="ask">"How many crews are you running?"</p></div></div></div>
+  <div class="card"><h2>What they get</h2><div class="tiles"><div class="tile"><h3>A CRM built for you</h3><p class="sub">Roof Command picks which houses to visit and why. It uses storms, roof age and city records. A list and a route each day. It tracks each job to a signed roof check.</p></div><div class="tile"><h3>A new website</h3><p class="sub">Built to turn visitors into calls. It gets Storm Quote, a fast roof price tool. Storm Quote is not done yet. We build it with our first roofers.</p></div><div class="tile"><h3>Found on Google</h3><p class="sub">This is called SEO. We fix their Google profile. We build a page for each city they work in.</p></div></div></div>
+  <div class="card"><h2>How the CRM works</h2><ol class="rows"><li><span class="mk num">1</span><div class="txt"><h3>A storm hits</h3><p class="sub">Each night we read the weather radar. We see where hail fell and how big it was.</p></div></li><li><span class="mk num">2</span><div class="txt"><h3>We check each house</h3><p class="sub">How old is the roof? Did it just get a new one? City records tell us. No record? It says Unknown.</p></div></li><li><span class="mk num">3</span><div class="txt"><h3>We rank the houses</h3><p class="sub">Big hail and an old roof go to the top. Each house shows why.</p></div></li><li><span class="mk num">4</span><div class="txt"><h3>The Today list</h3><p class="sub">Each morning it shows who to knock first. The route is on the crew's phones.</p></div></li><li><span class="mk num">5</span><div class="txt"><h3>The house page</h3><p class="sub">A photo from above, past storms and a 3D roof. Roof sizes are estimates.</p></div></li><li><span class="mk num">6</span><div class="txt"><h3>Homeowners say yes</h3><p class="sub">A page asks "Was my house hit?" They type their address. They say yes to hear from the roofer.</p></div></li><li><span class="mk num">7</span><div class="txt"><h3>Results</h3><p class="sub">It counts roof checks (inspections) booked and done. Not clicks.</p></div></li></ol></div>
+  <div class="card"><h2 style="margin-bottom:4px">Why we're different</h2><p class="sub" style="margin-bottom:12px">Use these when they say "I already have that."</p><ol class="rows two"><li><span class="mk num">1</span><div class="txt"><h3>A CRM built for you</h3><p class="sub">Not software you have to learn.</p></div></li><li><span class="mk num">2</span><div class="txt"><h3>We pick the right houses</h3><p class="sub">Hit by the storm, old roof, no new roof on record.</p></div></li><li><span class="mk num">3</span><div class="txt"><h3>Each house shows why</h3><p class="sub">"1.75 in hail on June 2. Roof about 17 years old."</p></div></li><li><span class="mk num">4</span><div class="txt"><h3>See the roof first</h3><p class="sub">A 3D roof with an estimated size, before you knock.</p></div></li><li><span class="mk num">5</span><div class="txt"><h3>Homeowners come to you</h3><p class="sub">They say yes on the website first.</p></div></li><li><span class="mk num">6</span><div class="txt"><h3>It keeps roofers legal</h3><p class="sub">No cold texts to homeowners. Only people who said yes, and past customers.</p></div></li><li><span class="mk num">7</span><div class="txt"><h3>One tool, not five</h3><p class="sub">One login. One company.</p></div></li><li><span class="mk num">8</span><div class="txt"><h3>We run it</h3><p class="sub">The roofer opens the list and goes.</p></div></li><li><span class="mk num">9</span><div class="txt"><h3>We count roof checks</h3><p class="sub">Not clicks.</p></div></li><li><span class="mk num">10</span><div class="txt"><h3>We only show what's real</h3><p class="sub">Unknown means unknown. Sizes are estimates.</p></div></li></ol><p class="quote">"Everybody else sells you one piece. We tell you which houses to go after and why, bring homeowners to you, and run the whole thing for you."</p></div>
+  <div class="card"><div class="chead"><h2>What roofers pay now</h2><span class="pill">For Luke only</span></div>
+    <div class="stack"><p class="sub">Never say these numbers on a call.</p>
+    <div class="tablewrap"><table><thead><tr><th>What they buy</th><th class="c3">Seen at</th><th class="pr">Cost</th></tr></thead><tbody><tr><td>Google help from an agency<span class="seen">6 to 12 month contracts</span></td><td class="c3">6 to 12 month contracts</td><td class="pr">$1,500 to $7,500</td></tr><tr><td>Door-knocking app<span class="seen">SalesRabbit, RoofLink, 5 reps</span></td><td class="c3">SalesRabbit, RoofLink, 5 reps</td><td class="pr">$300 to $600</td></tr><tr><td>Hail maps<span class="seen">HailTrace, Hail Recon</span></td><td class="c3">HailTrace, Hail Recon</td><td class="pr">$60 to $260</td></tr><tr><td>Email and text tools<span class="seen">Housecall Pro, Jobber</span></td><td class="c3">Housecall Pro, Jobber</td><td class="pr">$150 to $820</td></tr><tr><td>Roof price tool for a website<span class="seen">Roofle, Roofr</span></td><td class="c3">Roofle, Roofr</td><td class="pr">$125 to $350</td></tr><tr><td>Booked appointments<span class="seen">Lead sellers</span></td><td class="c3">Lead sellers</td><td class="pr">$200 to $350 each</td></tr><tr><td>Roof measuring<span class="seen">Roofr, Hover</span></td><td class="c3">Roofr, Hover</td><td class="pr">$19 to $99 a house</td></tr></tbody></table></div>
+    <div class="total"><b>About $2,100 to $9,500 a month</b><span class="sub">for a 5-person crew that buys it all. Setup and other fees are extra.</span></div><p class="sub">From seller sites and review sites, Nov 2026. These are estimates. Jack checks again before he uses a number.</p></div></div>
+</div>
+<div class="pane p-dial">
+  <div class="ph"><h2>Dial it</h2><span class="label">Keep this side open on calls</span></div>
+  <div class="card dial"><h2>The call, about 2 minutes</h2><p class="sub" style="margin:-6px 0 14px">First, find one true thing about them. How many Google reviews? Who beats them on Google? Did hail just hit near them?</p>
+    <ol class="rows"><li><span class="mk num">1</span><div class="stack" style="gap:8px;padding-top:3px"><div class="shead"><h3>Open</h3><span class="time">0:00 to 0:07</span></div><p class="say">Hi <span class="fi">first name</span>, it's <span class="fi">your name</span> with Wing Digital here in Texas. Is now a bad time?</p><p class="say">I'm calling because hail came through <span class="fi">city</span> on <span class="fi">date</span>.</p><p class="say">Or: <span class="fi">rival</span> shows up above you on Google for roof repair in <span class="fi">city</span>.</p></div></li><li><span class="mk num">2</span><div class="stack" style="gap:8px;padding-top:3px"><div class="shead"><h3>What we do</h3><span class="time">Under 30 seconds</span></div><p class="say">We build roofers their own CRM. It shows which houses just got hit and which roofs are old. So your crew knocks the right doors. We also build you a new website and help you show up on Google. The first month is $500. I can show you all of it on your own area in 15 minutes.</p></div></li><li><span class="mk num">3</span><div class="stack" style="gap:8px;padding-top:3px"><div class="shead"><h3>Three questions</h3></div><p class="say">Do you decide on marketing, or do you have a partner?</p><p class="say">Do you want to be ready for spring hail?</p><p class="say">Do you pay for leads or marketing right now?</p></div></li><li><span class="mk num">4</span><div class="stack" style="gap:8px;padding-top:3px"><div class="shead"><h3>Book it live</h3></div><p class="say">I'll put you with Jack. He built it. He will show you your own area, live. He has <span class="fi">day</span> at <span class="fi">time</span>. Does that work?</p><p class="sub">Book it while they are on the phone. Add the partner if there is one.</p></div></li><li><span class="mk num">5</span><div class="stack" style="gap:8px;padding-top:3px"><div class="shead"><h3>Lock it</h3></div><p class="say">I'll text you the link now. I'll remind you the day before.</p><p class="sub">Send Jack 3 lines: who, your fact, their 3 answers.</p></div></li></ol>
+    <div class="vg"><div class="stack" style="gap:8px"><h3>Voicemail</h3><p class="say">Hi <span class="fi">first name</span>, it's <span class="fi">your name</span> with Wing Digital. I'm calling about <span class="fi">rival or the hail in your city</span>. Call me back at <span class="fi">your number</span>.</p></div>
+    <div class="stack" style="gap:8px"><h3>Front desk</h3><p class="say">Who handles marketing and new jobs there?</p><p class="sub">Get the owner's name and the best time to call. Don't pitch the front desk.</p></div></div></div>
+  <div class="card"><h2 style="margin-bottom:4px">When they push back</h2><p class="sub" style="margin-bottom:6px">Say back what they said. Then ask a new question. Never argue. Tap a line to see the answer.</p><details open><summary>"How much is it?"</summary><p>First month is $500. That covers the CRM, your new website and showing up on Google. Jack walks you through the rest. Does <span class="fi">day</span> work?</p></details><details><summary>"Just send me info."</summary><p>Sure. It makes more sense on your own area. 15 minutes, <span class="fi">day</span> at <span class="fi">time</span>?</p></details><details><summary>"Referrals keep us busy."</summary><p>That's great. What does a slow month look like?</p></details><details><summary>"We got burned by an agency."</summary><p>I hear that a lot. What happened? Jack shows booked roof checks, not clicks.</p></details><details><summary>"Storm season's over."</summary><p>Right. We set up in winter so you're ready for spring.</p></details><details><summary>"I need to talk to my partner."</summary><p>Makes sense. Let's get you both on with Jack. What time works?</p></details><details><summary>"Who else uses this?"</summary><p>Honest answer: we're signing our first roofers now. We work with one in DFW.</p></details><details><summary>"What if it doesn't work?"</summary><p>Jack goes over the terms on the demo. You see your own area first.</p></details><details><summary>"Are you storm chasers?"</summary><p>No. We don't roof or knock doors. We're a software and marketing company. We work for roofers.</p></details><details><summary>"No time."</summary><p>I get it. That's why it's 15 minutes. Mornings or afternoons?</p></details><details><summary>"Not interested."</summary><p>No problem. How do you get most of your jobs now? If it's still no, say thanks and move on.</p></details></div>
+  <div class="card"><h2>Never say or do</h2><ul class="rows"><li><span class="mk"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div class="txt"><p>Any price except the $500 first month. The rest is Jack's to explain.</p></div></li><li><span class="mk"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div class="txt"><p>"Free roof." "We pay your deductible." "We handle your claim." These break the law in Texas and Oklahoma.</p></div></li><li><span class="mk"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div class="txt"><p>"Exact size." Roof sizes are estimates.</p></div></li><li><span class="mk"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div class="txt"><p>"We'll text homeowners for you." Homeowners must say yes first.</p></div></li><li><span class="mk"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div class="txt"><p>Results we have not proven.</p></div></li><li><span class="mk"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div class="txt"><p>The name of our DFW roofer.</p></div></li><li><span class="mk"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div class="txt"><p>Don't call homeowners. Call business numbers only.</p></div></li><li><span class="mk"><svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div class="txt"><p>Don't call before 8am or after 8pm their time. No more than 3 calls a day to one number. If they say "don't call again", never call again.</p></div></li></ul></div>
+</div>
+</div>
+<div class="card foot"><h2>Week one</h2><ul class="rows two"><li><span class="mk box"></span><div class="txt"><p>Click through the demo. Go in this order: Today, Storms, a house, CRM, SEO, Results.</p></div></li><li><span class="mk box"></span><div class="txt"><p>Watch Jack run one live demo.</p></div></li><li><span class="mk box"></span><div class="txt"><p>Split cities with Dylan.</p></div></li><li><span class="mk box"></span><div class="txt"><p>Get Jack's booking link and the call log.</p></div></li><li><span class="mk box"></span><div class="txt"><p>Make 20 calls a day. Log each one. Send Jack your numbers each day.</p></div></li><li><span class="mk box"></span><div class="txt"><p>Sit in when Jack closes someone you booked.</p></div></li></ul></div>
+<p class="office"><span class="muted">Wing Digital office line</span><b>(214) 412-8357</b></p>
+</div>
+
+</body></html>
